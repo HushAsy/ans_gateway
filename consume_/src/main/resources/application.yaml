@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: serviceConsumer
+eureka:
+  client:
+    instance:
+      hostname: localhost
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+

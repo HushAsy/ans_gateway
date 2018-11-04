@@ -1,0 +1,21 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: path_route
+        uri: lb://serviceConsumer
+#        uri: http://hao123.com
+        predicates:
+        - Path=/index/**
+
+application:
+  name: demogateway
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
